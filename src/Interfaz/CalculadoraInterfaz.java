@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Interfaz;
-import Interfaz.CalculadoraBasica;
+import Interfaz.CalcuBasicaInterfaz;
 
 /**
  *
@@ -85,11 +85,11 @@ public class CalculadoraInterfaz extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DesktopCalculadora, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+            .addComponent(DesktopCalculadora, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DesktopCalculadora, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+            .addComponent(DesktopCalculadora, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
         );
 
         pack();
@@ -104,7 +104,7 @@ public class CalculadoraInterfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_opcionSalirActionPerformed
 
     private void calculadoraBasicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculadoraBasicaActionPerformed
-        CalculadoraBasica cb = new CalculadoraBasica();
+        CalcuBasicaInterfaz cb = new CalcuBasicaInterfaz();
         DesktopCalculadora.add(cb);
         cb.show();
     }//GEN-LAST:event_calculadoraBasicaActionPerformed
