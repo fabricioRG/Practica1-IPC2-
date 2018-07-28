@@ -1,8 +1,11 @@
 package Manejadores;
 
-import Calculos.Calculador;
+import Calculos.CalculadorEnteros;
+import Calculos.CalculadorDecimales;
 import java.util.List;
 import java.util.LinkedList;
+import Interfaz.CalcuBasicaInterfaz;
+
 /**
  *
  * @author fabricio
@@ -13,42 +16,45 @@ public class ManejadorCalcuBasica {
     final private String resta = "\\-";
     final private String multiplicacion = "*";
     final private String division = "÷";
-    Calculador c;
 
-    
     public ManejadorCalcuBasica() {
-        c = new Calculador();
     }
 
-    public int resultado(String operacion){
+    public int resultadoEntero(String operacion) {
+        CalculadorEnteros ce = new CalculadorEnteros();
         String operacionFinal = operacion.replaceAll(" ", "");
-        if(operacionFinal.contains("+")){
-            return suma(operacionFinal);
-        } else if (operacionFinal.contains("-")){
-            return resta(operacionFinal); 
+        if (operacionFinal.contains("+")) {
+            return ce.suma(operacionFinal);
+        } else if (operacionFinal.contains("-")) {
+            return ce.resta(operacionFinal);
         } else {
             return 0;
         }
     }
-    
-    public String borrar(String texto) {
-        if (texto.length() > 1) {
-            String nuevoTexto = texto.substring(0, texto.length() - 1);
-            return nuevoTexto;
-        } else if (texto.length() == 1){
-            return "";
+
+    public double resultadoDecimal(String operacion) {
+        CalculadorDecimales cd = new CalculadorDecimales();
+        String operacionFinal = operacion.replaceAll(" ", "");
+        if (operacionFinal.contains("+")) {
+            return cd.suma(operacionFinal);
+        } else if (operacionFinal.contains("-")){
+            return cd.resta(operacionFinal);
         } else {
-            return "";
+            return 0;
         }
     }
 
-    public int suma(String operacion){
-        String numero[] = operacion.split(suma);
-        return c.operacion(numero, 1);
-    }
-    
-    public int resta(String operacion){
-        String numero[] = operacion.split(resta);
-        return c.operacion(numero, 2);
+    public String borrar(String texto, CalcuBasicaInterfaz cb) {
+        CalcuBasicaInterfaz cbi = cb;
+        if (texto.length() > 1) {
+            String nuevoTexto = texto.substring(0, texto.length() - 1);
+            return nuevoTexto;
+        } else if (texto.length() == 1) {
+            cb.estadoBotones(false);
+            return "";
+        } else {
+            cb.estadoBotones(false);
+            return "";
+        }
     }
 }

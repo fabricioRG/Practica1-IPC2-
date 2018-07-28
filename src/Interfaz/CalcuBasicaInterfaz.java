@@ -2,6 +2,7 @@ package Interfaz;
 
 import Manejadores.ManejadorCalcuBasica;
 import java.text.ParseException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,6 +18,7 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
      */
     public CalcuBasicaInterfaz() {
         initComponents();
+        estadoBotones(false);
         mcb = new ManejadorCalcuBasica();
     }
 
@@ -203,7 +205,6 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
 
         labelPrincipal.setFont(new java.awt.Font("Open Sans", 0, 36)); // NOI18N
         labelPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        labelPrincipal.setText(" ");
 
         buttonBorrar.setBackground(new java.awt.Color(222, 0, 0));
         buttonBorrar.setForeground(new java.awt.Color(254, 254, 254));
@@ -289,8 +290,8 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -337,7 +338,7 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(number9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(buttonPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(80, 80, 80))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -348,7 +349,7 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -356,46 +357,58 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
 
     private void number9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number9ActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "9");
+        estadoBotones(true);
+        
     }//GEN-LAST:event_number9ActionPerformed
 
     private void number8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number8ActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "8");
+        estadoBotones(true);
     }//GEN-LAST:event_number8ActionPerformed
 
     private void number7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number7ActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "7");
+        estadoBotones(true);
     }//GEN-LAST:event_number7ActionPerformed
 
     private void number6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number6ActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "6");
+        estadoBotones(true);
     }//GEN-LAST:event_number6ActionPerformed
 
     private void number5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number5ActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "5");
+        estadoBotones(true);
     }//GEN-LAST:event_number5ActionPerformed
 
     private void number4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number4ActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "4");
+        estadoBotones(true);
     }//GEN-LAST:event_number4ActionPerformed
 
     private void number3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number3ActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "3");
+        estadoBotones(true);
     }//GEN-LAST:event_number3ActionPerformed
 
     private void number2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number2ActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "2");
+        estadoBotones(true);
     }//GEN-LAST:event_number2ActionPerformed
 
     private void number1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number1ActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "1");
+        estadoBotones(true);
     }//GEN-LAST:event_number1ActionPerformed
 
     private void buttonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSumaActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "+");
+        estadoBotones(true);
     }//GEN-LAST:event_buttonSumaActionPerformed
 
     private void number0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number0ActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "0");
+        estadoBotones(true);
     }//GEN-LAST:event_number0ActionPerformed
 
     private void buttonRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRestaActionPerformed
@@ -403,7 +416,7 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_buttonRestaActionPerformed
 
     private void buttonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBorrarActionPerformed
-        labelPrincipal.setText(mcb.borrar(labelPrincipal.getText()));
+        labelPrincipal.setText(mcb.borrar(labelPrincipal.getText(), this));
     }//GEN-LAST:event_buttonBorrarActionPerformed
 
     private void buttonANSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonANSActionPerformed
@@ -436,21 +449,40 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
 
     private void buttonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIgualActionPerformed
         try {
-            String resultadoFinal = Integer.toString(mcb.resultado(labelPrincipal.getText()));
+            String resultadoFinal = "";
+            estadoBotones(false);
+            if(labelPrincipal.getText().contains(".")){
+                resultadoFinal = Double.toString(mcb.resultadoDecimal(labelPrincipal.getText()));
+            } else {
+                resultadoFinal = Integer.toString(mcb.resultadoEntero(labelPrincipal.getText()));
+            }
             labelPrincipal.setText(resultadoFinal);
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(rootPane, "No es posible realizar la operacion solicitada", "Error de formato", JOptionPane.ERROR_MESSAGE);
+            labelPrincipal.setText("");
+        } catch (Exception e){
             e.printStackTrace();
         }
     }//GEN-LAST:event_buttonIgualActionPerformed
 
     private void buttonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimpiarActionPerformed
         labelPrincipal.setText("");
+        estadoBotones(false);
     }//GEN-LAST:event_buttonLimpiarActionPerformed
 
     private void number10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number10ActionPerformed
-        // TODO add your handling code here:
+        labelPrincipal.setText(labelPrincipal.getText() + "00");
     }//GEN-LAST:event_number10ActionPerformed
 
+    public void estadoBotones(boolean estado){
+        buttonSuma.setEnabled(estado);
+        buttonResta.setEnabled(estado);
+        buttonMultiplicacion.setEnabled(estado);
+        buttonDivision.setEnabled(estado);
+        buttonPotencia.setEnabled(estado);
+        buttonResiduo.setEnabled(estado);
+        buttonIgual.setEnabled(estado);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonANS;
