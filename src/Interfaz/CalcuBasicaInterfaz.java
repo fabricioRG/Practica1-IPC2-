@@ -445,7 +445,7 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_buttonDivisionActionPerformed
 
     private void buttonRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRaizActionPerformed
-        labelPrincipal.setText(labelPrincipal.getText() + "√");
+        labelPrincipal.setText(labelPrincipal.getText() + "^(1/");
     }//GEN-LAST:event_buttonRaizActionPerformed
 
     private void buttonPotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPotenciaActionPerformed
@@ -477,7 +477,6 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             labelPrincipal.setText("");
             estadoBotones(false);
-            e.printStackTrace();
         }
     }//GEN-LAST:event_buttonIgualActionPerformed
 
@@ -492,6 +491,7 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
 
     public void estadoBotones(boolean estado){
         buttonSuma.setEnabled(estado);
+        buttonRaiz.setEnabled(estado);
         buttonResta.setEnabled(estado);
         buttonMultiplicacion.setEnabled(estado);
         buttonDivision.setEnabled(estado);

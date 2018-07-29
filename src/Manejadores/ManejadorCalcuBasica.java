@@ -33,6 +33,8 @@ public class ManejadorCalcuBasica {
             return ce.division(operacion);
         } else if (operacion.contains("%")) {
             return ce.residuo(operacion);
+        } else if (operacion.contains("^(1/")) {
+            return ce.raiz(operacion);
         } else if (operacion.contains("^")) {
             return ce.potencia(operacion);
         }else {
@@ -53,6 +55,8 @@ public class ManejadorCalcuBasica {
             return cd.division(operacion);
         } else if (operacionFinal.contains("%")) {
             throw new Exception("No es posible realizar el residuo de dos numeros decimales");
+        }else if(operacionFinal.contains("^(1/")) {
+            return cd.raiz(operacion);
         }else if(operacionFinal.contains("^")) {
             return cd.potencia(operacion);
         } else {

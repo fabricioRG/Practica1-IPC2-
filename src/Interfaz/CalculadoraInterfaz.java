@@ -5,6 +5,7 @@
  */
 package Interfaz;
 import Interfaz.CalcuBasicaInterfaz;
+import java.awt.Dimension;
 
 /**
  *
@@ -106,6 +107,9 @@ public class CalculadoraInterfaz extends javax.swing.JFrame {
     private void calculadoraBasicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculadoraBasicaActionPerformed
         CalcuBasicaInterfaz cb = new CalcuBasicaInterfaz();
         DesktopCalculadora.add(cb);
+        Dimension desktopSize = DesktopCalculadora.getSize();
+        Dimension frameSize = cb.getSize();
+        cb.setLocation((desktopSize.width - frameSize.width) / 2, 0);
         cb.show();
     }//GEN-LAST:event_calculadoraBasicaActionPerformed
 

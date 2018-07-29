@@ -12,6 +12,7 @@ public class CalculadorEnteros {
     final private String division = "\\÷";
     final private String residuo = "\\%";
     final private String potencia = "\\^";
+    final private String raiz = "\\^";
     int numeroParcialEntero = 0;
     int resultadoEntero = 0;
 
@@ -43,6 +44,12 @@ public class CalculadorEnteros {
         return operacionEnteros(numero, 5);
     }
 
+    public int raiz(String operacion){
+        String operacionFinal = operacion.replaceAll("\\(1/", "");
+        String numero[] = operacionFinal.split(raiz);
+        return operacionEnteros(numero, 7);
+    }
+    
     public int potencia(String operacion) {
         String numero[] = operacion.split(potencia);
         return operacionEnteros(numero, 6);
@@ -66,6 +73,9 @@ public class CalculadorEnteros {
                         resultadoEntero %= numeroParcialEntero;
                 } else if (tipoOperacion == 6) {
                     resultadoEntero = (int) Math.pow(resultadoEntero, numeroParcialEntero);
+                } else if (tipoOperacion == 7){
+                    double uno = 1;
+                    resultadoEntero = (int) Math.pow(resultadoEntero, uno / numeroParcialEntero);
                 }
             }
         }

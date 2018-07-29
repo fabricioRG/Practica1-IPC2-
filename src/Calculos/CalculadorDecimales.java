@@ -11,6 +11,7 @@ public class CalculadorDecimales {
     final private String multiplicacion = "\\*";
     final private String division = "\\÷";
     final private String potencia = "\\^";
+    final private String raiz = "\\^";
     double numeroParcialDecimal = 0;
     double resultadoDecimal = 0;
 
@@ -37,13 +38,18 @@ public class CalculadorDecimales {
         return operacionDecimales(numero, 4);
     }
 
+    public double raiz(String operacion){
+        String operacionFinal = operacion.replaceAll("\\(1/", "");
+        String numero[] = operacionFinal.split(raiz);
+        return operacionDecimales(numero, 6);
+    }
+    
     public double potencia(String operacion) {
         String numero[] = operacion.split(potencia);
         return operacionDecimales(numero, 5);
     }
 
     private double operacionDecimales(String numero[], int tipoOperacion) {
-        resultadoDecimal = 1;
         for (int i = 0; i < numero.length; i++) {
             numeroParcialDecimal = Double.parseDouble(numero[i]);
             if (i == 0) {
@@ -59,11 +65,12 @@ public class CalculadorDecimales {
                     resultadoDecimal /= numeroParcialDecimal;
                 } else if (tipoOperacion == 5) {
                     resultadoDecimal = Math.pow(resultadoDecimal, numeroParcialDecimal);
+                } else if (tipoOperacion == 6){
+                    double uno = 1;
+                    resultadoDecimal = Math.pow(resultadoDecimal, uno / numeroParcialDecimal);
                 }
             }
-
         }
         return resultadoDecimal;
     }
-
 }
