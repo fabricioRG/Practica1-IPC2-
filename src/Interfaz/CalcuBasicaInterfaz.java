@@ -12,7 +12,7 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
 
     
     ManejadorCalcuBasica mcb;
-    private int resultadoFinal = 0;
+    private String resultadoFinal = " ";
     /**
      * Creates new form CalcuadoraBasica
      */
@@ -126,7 +126,7 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
             }
         });
 
-        buttonMultiplicacion.setText("x");
+        buttonMultiplicacion.setText("*");
         buttonMultiplicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMultiplicacionActionPerformed(evt);
@@ -420,7 +420,12 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_buttonBorrarActionPerformed
 
     private void buttonANSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonANSActionPerformed
-        // TODO add your handling code here:
+        if(this.resultadoFinal.equals(" ")){
+            labelPrincipal.setText(labelPrincipal.getText() + "0");
+        } else {
+            labelPrincipal.setText(labelPrincipal.getText() + this.resultadoFinal);
+            estadoBotones(true);
+        }
     }//GEN-LAST:event_buttonANSActionPerformed
 
     private void buttonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPuntoActionPerformed
@@ -450,17 +455,25 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
     private void buttonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIgualActionPerformed
         try {
             String resultadoFinal = "";
-            estadoBotones(false);
+//            estadoBotones(false);
             if(labelPrincipal.getText().contains(".")){
                 resultadoFinal = Double.toString(mcb.resultadoDecimal(labelPrincipal.getText()));
+                this.resultadoFinal = resultadoFinal;
             } else {
                 resultadoFinal = Integer.toString(mcb.resultadoEntero(labelPrincipal.getText()));
+                this.resultadoFinal = resultadoFinal;
             }
             labelPrincipal.setText(resultadoFinal);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(rootPane, "No es posible realizar la operacion solicitada", "Error de formato", JOptionPane.ERROR_MESSAGE);
             labelPrincipal.setText("");
-        } catch (Exception e){
+            estadoBotones(false);
+            e.printStackTrace();
+        } catch(ArithmeticException e) {
+            JOptionPane.showMessageDialog(rootPane, "No es posible realizar la operacion aritmetica solicitada", "Error aritmetico",JOptionPane.ERROR_MESSAGE);
+            labelPrincipal.setText("");
+            estadoBotones(false);
+        }catch (Exception e){
             e.printStackTrace();
         }
     }//GEN-LAST:event_buttonIgualActionPerformed

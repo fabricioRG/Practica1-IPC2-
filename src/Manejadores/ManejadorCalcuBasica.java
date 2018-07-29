@@ -27,7 +27,13 @@ public class ManejadorCalcuBasica {
             return ce.suma(operacionFinal);
         } else if (operacionFinal.contains("-")) {
             return ce.resta(operacionFinal);
-        } else {
+        } else if (operacionFinal.contains("*")) {
+            return ce.multiplicacion(operacionFinal);
+        } else if (operacion.contains("÷")) {
+            return ce.division(operacion);
+        } else if (operacion.contains("%")) {
+            return ce.residuo(operacion);
+        }else {
             return 0;
         }
     }
@@ -37,9 +43,15 @@ public class ManejadorCalcuBasica {
         String operacionFinal = operacion.replaceAll(" ", "");
         if (operacionFinal.contains("+")) {
             return cd.suma(operacionFinal);
-        } else if (operacionFinal.contains("-")){
+        } else if (operacionFinal.contains("-")) {
             return cd.resta(operacionFinal);
-        } else {
+        } else if (operacionFinal.contains("*")) {
+            return cd.multiplicacion(operacion);
+        } else if (operacionFinal.contains("÷")) {
+            return cd.division(operacion);
+        } else if (operacionFinal.contains("%")) {
+            throw new NumberFormatException();
+        }else {
             return 0;
         }
     }
