@@ -450,6 +450,7 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
 
     private void buttonPotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPotenciaActionPerformed
         labelPrincipal.setText(labelPrincipal.getText() + "^");
+        estadoBotones(false);
     }//GEN-LAST:event_buttonPotenciaActionPerformed
 
     private void buttonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIgualActionPerformed
@@ -468,12 +469,14 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(rootPane, "No es posible realizar la operacion solicitada", "Error de formato", JOptionPane.ERROR_MESSAGE);
             labelPrincipal.setText("");
             estadoBotones(false);
-            e.printStackTrace();
         } catch(ArithmeticException e) {
             JOptionPane.showMessageDialog(rootPane, "No es posible realizar la operacion aritmetica solicitada", "Error aritmetico",JOptionPane.ERROR_MESSAGE);
             labelPrincipal.setText("");
             estadoBotones(false);
         }catch (Exception e){
+            JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            labelPrincipal.setText("");
+            estadoBotones(false);
             e.printStackTrace();
         }
     }//GEN-LAST:event_buttonIgualActionPerformed

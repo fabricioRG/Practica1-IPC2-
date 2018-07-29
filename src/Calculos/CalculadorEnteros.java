@@ -11,6 +11,7 @@ public class CalculadorEnteros {
     final private String multiplicacion = "\\*";
     final private String division = "\\÷";
     final private String residuo = "\\%";
+    final private String potencia = "\\^";
     int numeroParcialEntero = 0;
     int resultadoEntero = 0;
 
@@ -36,43 +37,38 @@ public class CalculadorEnteros {
         String numero[] = operacion.split(division);
         return operacionEnteros(numero, 4);
     }
-    
-    public int residuo(String operacion){
+
+    public int residuo(String operacion) {
         String numero[] = operacion.split(residuo);
         return operacionEnteros(numero, 5);
     }
+
+    public int potencia(String operacion) {
+        String numero[] = operacion.split(potencia);
+        return operacionEnteros(numero, 6);
+    }
+
     private int operacionEnteros(String numero[], int tipoOperacion) {
-        resultadoEntero = 1;
         for (int i = 0; i < numero.length; i++) {
             numeroParcialEntero = Integer.parseInt(numero[i]);
-            if (tipoOperacion == 1) {
-                if (i == 0) {
-                    resultadoEntero = 0;
-                }
-                resultadoEntero += numeroParcialEntero;
-            } else if (tipoOperacion == 2) {
-                if (i == 0) {
-                    resultadoEntero = numeroParcialEntero;
-                } else {
+            if (i == 0) {
+                resultadoEntero = numeroParcialEntero;
+            } else if (i >= 1) {
+                if (tipoOperacion == 1) {
+                        resultadoEntero += numeroParcialEntero;
+                } else if (tipoOperacion == 2) {
                     resultadoEntero -= numeroParcialEntero;
-                }
-            } else if (tipoOperacion == 3) {
-                resultadoEntero *= numeroParcialEntero;
-            } else if (tipoOperacion == 4) {
-                if (i == 0) {
-                    resultadoEntero = numeroParcialEntero;
-                } else {
-                    resultadoEntero /= numeroParcialEntero;
-                }
-            } else if (tipoOperacion == 5){
-                if(i == 0){
-                    resultadoEntero = numeroParcialEntero;
-                } else {
-                    resultadoEntero %= numeroParcialEntero;
+                } else if (tipoOperacion == 3) {
+                        resultadoEntero *= numeroParcialEntero;
+                } else if (tipoOperacion == 4) {
+                        resultadoEntero /= numeroParcialEntero;
+                } else if (tipoOperacion == 5) {
+                        resultadoEntero %= numeroParcialEntero;
+                } else if (tipoOperacion == 6) {
+                    resultadoEntero = (int) Math.pow(resultadoEntero, numeroParcialEntero);
                 }
             }
         }
         return resultadoEntero;
     }
-
 }

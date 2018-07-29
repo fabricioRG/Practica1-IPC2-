@@ -33,12 +33,14 @@ public class ManejadorCalcuBasica {
             return ce.division(operacion);
         } else if (operacion.contains("%")) {
             return ce.residuo(operacion);
+        } else if (operacion.contains("^")) {
+            return ce.potencia(operacion);
         }else {
             return 0;
         }
     }
 
-    public double resultadoDecimal(String operacion) {
+    public double resultadoDecimal(String operacion) throws Exception{
         CalculadorDecimales cd = new CalculadorDecimales();
         String operacionFinal = operacion.replaceAll(" ", "");
         if (operacionFinal.contains("+")) {
@@ -50,8 +52,10 @@ public class ManejadorCalcuBasica {
         } else if (operacionFinal.contains("÷")) {
             return cd.division(operacion);
         } else if (operacionFinal.contains("%")) {
-            throw new NumberFormatException();
-        }else {
+            throw new Exception("No es posible realizar el residuo de dos numeros decimales");
+        }else if(operacionFinal.contains("^")) {
+            return cd.potencia(operacion);
+        } else {
             return 0;
         }
     }
