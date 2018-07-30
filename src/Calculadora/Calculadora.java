@@ -1,4 +1,4 @@
-package calculadora;
+package Calculadora;
 import calculadora.gui.CalculadoraInterfaz;
 /**
  *

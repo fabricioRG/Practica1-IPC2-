@@ -20,6 +20,12 @@ public class ManejadorCalcuBasica {
     public ManejadorCalcuBasica() {
     }
 
+    /**
+     * Metodo que recibe como parametro la operacion de la calculadora, la cual se encarga de verificar el tipo de operacion
+     * que procede a realizar, en este caso devuelve un numero entero
+     * @param operacion
+     * @return 
+     */
     public int resultadoEntero(String operacion) {
         CalculadorEnteros ce = new CalculadorEnteros();
         String operacionFinal = operacion.replaceAll(" ", "");
@@ -42,6 +48,12 @@ public class ManejadorCalcuBasica {
         }
     }
 
+    /**
+     * Metodo que recibe como parametro la operacion de la calculadora, la cual se encarga de verificar el tipo de operacion
+     * que procede a realizar, en este caso devuelve un numero entero
+     * @param operacion
+     * @return 
+     */
     public double resultadoDecimal(String operacion) throws Exception{
         CalculadorDecimales cd = new CalculadorDecimales();
         String operacionFinal = operacion.replaceAll(" ", "");
@@ -64,6 +76,13 @@ public class ManejadorCalcuBasica {
         }
     }
 
+    /**
+     * Metodo que recibe como parametro el texto mostrado en pantalla en la calculadora, tomarlo, utilizar la funcion
+     * "substring" y tomarlo nuevamente con una posicion anterior a la actual
+     * @param texto
+     * @param cb
+     * @return 
+     */
     public String borrar(String texto, CalcuBasicaInterfaz cb) {
         CalcuBasicaInterfaz cbi = cb;
         if (texto.length() > 1) {

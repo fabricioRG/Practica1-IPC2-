@@ -420,6 +420,10 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
         labelPrincipal.setText(mcb.borrar(labelPrincipal.getText(), this));
     }//GEN-LAST:event_buttonBorrarActionPerformed
 
+    /**
+     * Boton "ANS" encargado de mostrar en pantalla el resultado del ultimo calculo realizado
+     * @param evt 
+     */
     private void buttonANSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonANSActionPerformed
         if(this.resultadoFinal.equals(" ")){
             labelPrincipal.setText(labelPrincipal.getText() + "0");
@@ -454,6 +458,13 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
         estadoBotones(false);
     }//GEN-LAST:event_buttonPotenciaActionPerformed
 
+    /**
+     * Boton "Igual" que se encarga de obtener el texto mostrado en la interfaz, para posteriormente realizar los calculos
+     * solicitados por el usuario. Se encarga de verificar si la operacion contiene numeros decimales, de lo contrario
+     * se trabaja unicamente con numeros enteros; asi tambien se encarga de recoger errores que puedan surgir al
+     * momento de realizar conversion de numeros, errores aritmeticos o excepciones mas especificas
+     * @param evt 
+     */
     private void buttonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIgualActionPerformed
         try {
             String resultadoFinal = "";
@@ -489,6 +500,7 @@ public class CalcuBasicaInterfaz extends javax.swing.JInternalFrame {
         labelPrincipal.setText(labelPrincipal.getText() + "00");
     }//GEN-LAST:event_number10ActionPerformed
 
+    //Metodo encargado de habilitar o deshabilitar los botones que no necesiten estarlo
     public void estadoBotones(boolean estado){
         buttonSuma.setEnabled(estado);
         buttonRaiz.setEnabled(estado);
