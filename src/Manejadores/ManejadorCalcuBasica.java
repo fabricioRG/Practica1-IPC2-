@@ -1,10 +1,10 @@
 package Manejadores;
 
-import Calculos.CalculadorEnteros;
-import Calculos.CalculadorDecimales;
+import calculadora.backend.CalculadorEnteros;
+import calculadora.backend.CalculadorDecimales;
 import java.util.List;
 import java.util.LinkedList;
-import Interfaz.CalcuBasicaInterfaz;
+import calculadora.gui.CalcuBasicaInterfaz;
 
 /**
  *

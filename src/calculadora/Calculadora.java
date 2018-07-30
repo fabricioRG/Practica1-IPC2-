@@ -1,5 +1,5 @@
 package calculadora;
-import Interfaz.CalculadoraInterfaz;
+import calculadora.gui.CalculadoraInterfaz;
 /**
  *
  * @author fabricio
